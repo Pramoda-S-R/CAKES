@@ -9,6 +9,9 @@ Welcome to CAKES, a simple yet powerful tool designed to ease the process of gen
 - Logs each analysis in a database for future reference and continuous improvement.
 - Tailored to support medical professionals, particularly in resource-limited settings.
 
+## Dataset and Weights
+[Link to Dataset and the weights (around 400MB)](https://mega.nz/folder/clUW1L6A#yDqIDsXTLVKPvUQKkzwp6g)
+
 ## How to Use
 - Clone the yolov5 repository using the command
 ```bash
@@ -17,7 +20,7 @@ cd yolov5
 pip install -r requirements.txt  # install
 ```
 - Extract the dataset.zip file into a folder named dataset in the same directory as your workspace
-- In ```genome_detection.py``` change the path in the line ```model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5/runs/train/exp6/weights/best.pt')``` to the weights provided in this repo
+- In ```genome_detection.py``` change the path in the line ```model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5/runs/train/exp6/weights/best.pt')``` to the weights provided
 - Make directories in the workspace using command
 ```bash
 mkdir static instance
