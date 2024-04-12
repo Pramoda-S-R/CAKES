@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Results</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #36393f;
+        color: #dcddde;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        color: #fff;
+      }
+
+      table {
+        border-collapse: collapse;
+        background-color: #202225;
+      }
+
+      td,
+      th {
+        border: 1px solid #444;
+        padding: 8px;
+        color: #dcddde;
+      }
+
+      tr:nth-child(even) {
+        background-color: #292b2f;
+      }
+
+      tr:hover {
+        background-color: #7289da;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Detected Items</h1>
+    <table>
+      <tr>
+        <th>Item</th>
+        {% for key, values in results.items() %}
+        <th>{{ key }}</th>
+        {% endfor %}
+      </tr>
+      <tr>
+        <td>Values</td>
+        {% for key, value in results.items() %}
+        <td>{{ value }}</td>
+        {% endfor %}
+      </tr>
+    </table>
+    <h4>Gender: {{ gender }}</h4>
+    <h4>Predicted Disorder: {{ disorder }}</h4>
+
+    <img
+      src="{{ url_for('static', filename='detected_images/' + image) }}"
+      alt="Detected Image"
+    />
+  </body>
+</html>
